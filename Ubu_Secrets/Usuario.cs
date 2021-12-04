@@ -1,34 +1,37 @@
 ﻿using System;
 
-namespace Biblioteca_Clases
+namespace BibliotecaClases
 {
     public class Usuario
     {
-        private String idUsuario;
-        private String nombre;
-        private String apellidos;
-        private String email;
-        private String password;
-        private String ultimaIp;
+        private int idUsuario;
+        private string nombre;
+        private string apellidos;
+        private string email;
+        private string password;
+        private string ultimaIp;
         private DateTime ultimaActividad;
         private bool esGestor;
         private bool activo;
         private bool autorizado;
         private bool bloqueado;
 
-        public Usuario(string idUsuario, string nombre, string apellidos, string email, bool esGestor, bool estado, string password, DateTime ultimaActividad, string ultimaIp)
+        public Usuario(string email, string nombre, string apellidos, string password)
         {
-            this.idUsuario = idUsuario;
+            this.idUsuario = -1;
             this.nombre = nombre;
             this.apellidos = apellidos;
             this.email = email;
-            this.esGestor = esGestor;
             this.password = password;
-            this.ultimaActividad = ultimaActividad;
-            this.ultimaIp = ultimaIp;
+            this.Encriptar();
+            this.Activo = false; // un usuario Admin tendrá que activarlo
+            this.Bloqueado = false;
+            this.EsGestor = false;
+            this.ultimaActividad = new DateTime();
+            this.ultimaIp = "127.0.0.1";
         }
 
-        public string IdUsuario { get => idUsuario; set => idUsuario = value; }
+        public int IdUsuario { get => idUsuario; set => idUsuario = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellidos { get => apellidos; set => apellidos = value; }
         public string Email { get => email; set => email = value; }
@@ -52,32 +55,48 @@ namespace Biblioteca_Clases
             return HashCode.Combine(idUsuario);
         }
 
-        public void Activar(Usuario _usuario)
+        public void Activar()
         {
-            _usuario.Activo = true;
+            this.Activo = true;
         }
 
-        public void Desactivar(Usuario _usuario)
+        public void Desactivar()
         {
-            _usuario.Activo = false;
+            this.Activo = false;
         }
 
-        public void Autorizar(Usuario _usuario)
+        public void Autorizar()
         {
-            _usuario.Autorizado = true;
+            this.Autorizado = true;
         }
 
-        public void DesAutorizar(Usuario _usuario)
+        public void DesAutorizar()
         {
-            _usuario.Autorizado = false;
+            this.Autorizado = false;
         }
-        public void Bloquear(Usuario _usuario)
+        public void Bloquear()
         {
-            _usuario.Bloqueado = true;
+            this.Bloqueado = true;
         }
-        public void DesBloquear(Usuario _usuario)
+        public void DesBloquear()
         {
-            _usuario.Bloqueado = false;
+            this.Bloqueado = false;
+        }
+
+        public void Encriptar()
+        {
+            this.Password = Encriptador.Encriptar(this.password);
+        }
+
+        public bool CambiaPassword(string oldPassword, string newPassword)
+        {
+            string newPasswordEncriptada = Encriptador.Encriptar(oldPassword);
+            if (newPasswordEncriptada == this.Password)
+            {
+                this.Password = newPasswordEncriptada;
+                return true;
+            }
+            return false;
         }
     }
 }

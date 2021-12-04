@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Google Drive\\UBU\\5º\\1er SEMESTRE\\Validación y pruebas\\Práctica-01\\Ubu_Secrets\\Ubu_Secrets\\Biblioteca Clases.csproj",
-      "projectName": "Biblioteca Clases",
-      "projectPath": "G:\\Google Drive\\UBU\\5º\\1er SEMESTRE\\Validación y pruebas\\Práctica-01\\Ubu_Secrets\\Ubu_Secrets\\Biblioteca Clases.csproj",
+      "projectUniqueName": "G:\\Google Drive\\UBU\\5º\\1er SEMESTRE\\Validación y pruebas\\Práctica-01\\Ubu_Secrets\\Ubu_Secrets\\BibliotecaClases.csproj",
+      "projectName": "BibliotecaClases",
+      "projectPath": "G:\\Google Drive\\UBU\\5º\\1er SEMESTRE\\Validación y pruebas\\Práctica-01\\Ubu_Secrets\\Ubu_Secrets\\BibliotecaClases.csproj",
       "packagesPath": "C:\\Users\\JOQUI\\.nuget\\packages\\",
       "outputPath": "G:\\Google Drive\\UBU\\5º\\1er SEMESTRE\\Validación y pruebas\\Práctica-01\\Ubu_Secrets\\Ubu_Secrets\\obj\\",
       "projectStyle": "PackageReference",

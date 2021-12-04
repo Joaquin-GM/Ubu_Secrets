@@ -1,4 +1,4 @@
-﻿using Biblioteca_Clases;
+﻿using BibliotecaClases;
 using System;
 
 namespace Interfaces

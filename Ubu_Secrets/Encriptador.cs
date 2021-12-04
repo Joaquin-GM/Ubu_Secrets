@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Biblioteca_Clases
+namespace BibliotecaClases
 {
     public static class Encriptador
     {
