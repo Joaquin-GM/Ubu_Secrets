@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Ubu_Secrets
+namespace Biblioteca_Clases
 {
-    public class Class1
+    public class Usuario
     {
     }
 }

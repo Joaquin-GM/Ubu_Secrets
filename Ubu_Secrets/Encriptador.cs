@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca_Clases
 {
-    class Class1
+    class Encriptador
     {
     }
 }
