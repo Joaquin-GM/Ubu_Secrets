@@ -40,7 +40,6 @@ namespace BibliotecaClases
         public string UltimaIp { get => ultimaIp; set => ultimaIp = value; }
         public bool Activo { get => activo; set => activo = value; }
         public bool EsGestor { get => esGestor; set => esGestor = value; }
-        public bool Activo1 { get => activo; set => activo = value; }
         public bool Autorizado { get => autorizado; set => autorizado = value; }
         public bool Bloqueado { get => bloqueado; set => bloqueado = value; }
 
@@ -90,8 +89,9 @@ namespace BibliotecaClases
 
         public bool CambiaPassword(string oldPassword, string newPassword)
         {
-            string newPasswordEncriptada = Encriptador.Encriptar(oldPassword);
-            if (newPasswordEncriptada == this.Password)
+            string oldPasswordEncriptada = Encriptador.Encriptar(oldPassword);
+            string newPasswordEncriptada = Encriptador.Encriptar(newPassword);
+            if (oldPasswordEncriptada == this.Password)
             {
                 this.Password = newPasswordEncriptada;
                 return true;
