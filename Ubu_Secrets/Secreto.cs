@@ -1,4 +1,6 @@
-﻿namespace BibliotecaClases
+﻿using System;
+
+namespace BibliotecaClases
 {
     public class Secreto
     {
@@ -24,6 +26,11 @@
         {
             return obj is Secreto secreto &&
                    IdSecreto == secreto.IdSecreto;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(idSecreto);
         }
     }
 }

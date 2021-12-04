@@ -83,12 +83,6 @@ namespace Interfaces
         // Falso si no existe en la base de datos
         bool ActualizaSecreto(Secreto _secreto);
 
-        // Método que devuelve el secreto asociado a un secreto encriptado dado.
-        // Retorna:
-        // Texto del secreto si existe
-        // Null si no existe ninguno en la base de datos con ese email
-        Secreto LeeSecreto(String _secretoEncriptado);
-
         // Método que devuelve el secreto asociado a un id dado.
         // Retorna:
         // Secreto si existe
