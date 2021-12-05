@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BibliotecaClases
+﻿namespace BibliotecaClases
 {
     public class Secreto
     {

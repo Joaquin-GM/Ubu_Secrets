@@ -52,8 +52,6 @@
             height: 8px;
         }
         .auto-style5 {
-            width: 16px;
-            height: 23px;
         }
         .auto-style6 {
             width: 100px;
@@ -70,7 +68,6 @@
             text-align: left;
         }
         .auto-style10 {
-            height: 23px;
             text-align: center;
         }
         .auto-style11 {
@@ -187,11 +184,11 @@
                 <tr>
                    <td class="padding-col">&nbsp;</td>
                     <td class="auto-style11">
-                        <asp:Button ID="btnRegistro" runat="server" Text="Registrarme" Width="126px" />
+                        <asp:Button ID="btnRegistro" runat="server" Text="Registrarme" Width="126px" OnClick="btnRegistro_Click" />
                     </td>
                     <td class="margin-col2">&nbsp;<td class="margin-col2">&nbsp;</td>
                     <td class="auto-style11">
-                        <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" Width="126px" />
+                        <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" Width="126px" OnClick="btnAceptar_Click" />
                     </td>
                     <td class="padding-col">&nbsp;</td>
                 </tr>

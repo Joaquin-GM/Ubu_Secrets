@@ -94,6 +94,10 @@
       <Project>{5973D8B8-BD7A-4CF3-8499-047C9321C7FF}</Project>
       <Name>BibliotecaClases</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{DAAB39D7-1D14-4038-A4E8-16F2BD14FCAE}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
