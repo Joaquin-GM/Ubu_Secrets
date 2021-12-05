@@ -105,7 +105,7 @@ namespace www
         protected global::System.Web.UI.WebControls.Label lblErrorEmail;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control tbxEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -132,13 +132,13 @@ namespace www
         protected global::System.Web.UI.WebControls.Label lblErrorPassword;
 
         /// <summary>
-        /// Control TextBox2.
+        /// Control tbxPassword.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox tbxPassword;
 
         /// <summary>
         /// Control lblInfo.

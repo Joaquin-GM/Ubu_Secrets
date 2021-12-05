@@ -42,31 +42,43 @@ namespace www
             } else {
                 this.lblErrorNombre.Text = "";
             }
-            if (this.lblErrorApellidos.Text == null || this.lblErrorApellidos.Text == "")
+            if (this.tbxApellidos.Text == null || this.tbxApellidos.Text == "")
             {
-                this.lblErrorNombre.Text = "Apellidos no válidos";
+                this.lblErrorApellidos.Text = "Apellidos no válidos";
             } else
             {
-                this.lblErrorNombre.Text = "";
+                this.lblErrorApellidos.Text = "";
             }
             Validador v = new Validador();
             if (v.EmailValido(this.tbxEmail.Text))
             {
                 this.lblErrorEmail.Text = "";
+                // Comprobación email en uso
+                if (this.baseDeDatos.ExisteUsuarioEmail(this.tbxEmail.Text))
+                {
+                    this.lblErrorVentana.Text = "Email ya en uso";
+                } else
+                {
+                    this.lblErrorVentana.Text = "";
+                }
             } else
             {
                 this.lblErrorEmail.Text = "Email no válido";
             }
-            if (this.lblErrorPassword.Text == null || this.lblErrorPassword.Text == ""  || this.lblErrorPassword.Text.Length < 6)
+            if (this.tbxPassword.Text == null || this.tbxPassword.Text == ""  || this.tbxPassword.Text.Length < 6)
             {
-                this.lblErrorPassword.Text = "Contraseña no válida (> 6 caracteres)";
-            }
-            else
+                this.lblErrorPassword.Text = "Contraseña no válida (min 6 caracteres)";
+            } else
             {
                 this.lblErrorPassword.Text = "";
             }
 
-            // Comprobación email en uso
+            // Si no hay errores vamos a inicio de sesión
+            if (this.lblErrorNombre.Text.Length == 0 && this.lblErrorApellidos.Text.Length == 0 &&
+                this.lblErrorEmail.Text.Length == 0 && this.lblErrorPassword.Text.Length == 0)
+            {
+                this.registro();
+            }
         }
         protected void registro()
         {

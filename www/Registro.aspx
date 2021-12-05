@@ -153,7 +153,7 @@
                 <tr>
                    <td class="padding-col">&nbsp;</td>
                     <td colspan="4">
-                        <asp:TextBox ID="tbxApellidos" runat="server" CssClass="auto-style8" Width="100%" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="tbxApellidos" runat="server" CssClass="auto-style8" Width="100%"></asp:TextBox>
                     </td>
                     <td class="padding-col">&nbsp;</td>
                 </tr>
@@ -231,7 +231,7 @@
                 <tr>
                    <td class="auto-style5"></td>
                     <td class="auto-style10" colspan="4">              
-                        <asp:Label ID="lblInfo" runat="server" Text="Antes de poder usar su cuenta debe ser autorizada y la primera vez que inicie sesión deberá modificar la contraseña." Font-Bold="True" ForeColor="Black"></asp:Label>
+                        <asp:Label ID="lblInfo" runat="server" Text="Antes de poder usar su cuenta debe ser autorizada y la primera vez que inicie sesión deberá modificar la contraseña." Font-Bold="False" ForeColor="Black"></asp:Label>
                     </td>
                     <td class="auto-style5"></td>
                 </tr>
