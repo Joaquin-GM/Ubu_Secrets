@@ -1,6 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BibliotecaClases;
-using System;
 namespace BibliotecaClases.Tests
 {
     [TestClass()]

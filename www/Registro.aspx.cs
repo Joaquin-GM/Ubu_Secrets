@@ -39,13 +39,16 @@ namespace www
             if (this.tbxNombre.Text == null || this.tbxNombre.Text == "")
             {
                 this.lblErrorNombre.Text = "Nombre no válido";
-            } else {
+            }
+            else
+            {
                 this.lblErrorNombre.Text = "";
             }
             if (this.tbxApellidos.Text == null || this.tbxApellidos.Text == "")
             {
                 this.lblErrorApellidos.Text = "Apellidos no válidos";
-            } else
+            }
+            else
             {
                 this.lblErrorApellidos.Text = "";
             }
@@ -57,25 +60,28 @@ namespace www
                 if (this.baseDeDatos.ExisteUsuarioEmail(this.tbxEmail.Text))
                 {
                     this.lblErrorVentana.Text = "Email ya en uso";
-                } else
+                }
+                else
                 {
                     this.lblErrorVentana.Text = "";
                 }
-            } else
+            }
+            else
             {
                 this.lblErrorEmail.Text = "Email no válido";
             }
-            if (this.tbxPassword.Text == null || this.tbxPassword.Text == ""  || this.tbxPassword.Text.Length < 6)
+            if (this.tbxPassword.Text == null || this.tbxPassword.Text == "" || this.tbxPassword.Text.Length < 6)
             {
                 this.lblErrorPassword.Text = "Contraseña no válida (min 6 caracteres)";
-            } else
+            }
+            else
             {
                 this.lblErrorPassword.Text = "";
             }
 
             // Si no hay errores vamos a inicio de sesión
             if (this.lblErrorNombre.Text.Length == 0 && this.lblErrorApellidos.Text.Length == 0 &&
-                this.lblErrorEmail.Text.Length == 0 && this.lblErrorPassword.Text.Length == 0)
+                this.lblErrorEmail.Text.Length == 0 && this.lblErrorVentana.Text.Length == 0)
             {
                 this.registro();
             }

@@ -18,7 +18,8 @@ namespace www
             }
 
             uAutenticado = (Usuario)Session["uAutenticado"];
-            if (uAutenticado == null) {
+            if (uAutenticado == null)
+            {
                 Server.Transfer("InicioSesion.aspx");
             }
 

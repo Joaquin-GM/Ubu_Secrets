@@ -38,17 +38,22 @@ namespace www
             {
                 this.lblErrorEmail.Text = "";
                 uAutenticado = this.baseDeDatos.LeeUsuario(this.tbxEmail.Text);
-                if (uAutenticado != null) {
-                    if (!uAutenticado.ValidaPassword(this.tbxPassword.Text)) {
+                if (uAutenticado != null)
+                {
+                    if (!uAutenticado.ValidaPassword(this.tbxPassword.Text))
+                    {
                         this.lblErrorVentana.Text = "Email y/o contraseña incorrecta";
-                    } else
+                    }
+                    else
                     {
                         // COMRPROBACIONES EXTRA ACTIVO y AUTORIZADO
                         if (!uAutenticado.Activo)
                         {
                             this.lblErrorVentana.Text = "El usuario no está activo, por favor contacta con un administrador.";
 
-                        } else if (uAutenticado.Bloqueado) {
+                        }
+                        else if (uAutenticado.Bloqueado)
+                        {
                             this.lblErrorVentana.Text = "El usuario está bloqueado, por favor contacta con un administrador.";
                         }
                         else if (uAutenticado.Autorizado)
@@ -62,7 +67,8 @@ namespace www
                         }
                     }
                 }
-            } else
+            }
+            else
             {
                 this.lblErrorEmail.Text = "Email no válido";
             }

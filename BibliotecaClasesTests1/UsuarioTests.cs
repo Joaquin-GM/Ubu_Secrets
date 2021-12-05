@@ -1,5 +1,4 @@
-﻿using BibliotecaClases;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BibliotecaClases.Tests
 {
