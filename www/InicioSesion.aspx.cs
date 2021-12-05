@@ -22,7 +22,6 @@ namespace www
                 // Sesión previa iniciada
                 this.iniciarSesion();
             }
-            
 
             if (!IsPostBack)
             {
@@ -41,7 +40,6 @@ namespace www
                 uAutenticado = this.baseDeDatos.LeeUsuario(this.tbxEmail.Text);
                 if (uAutenticado != null) {
                     if (!uAutenticado.ValidaPassword(this.tbxPassword.Text)) {
-                        // this.lblErrorPassword.Text = "Contraseña incorrecta";
                         this.lblErrorVentana.Text = "Email y/o contraseña incorrecta";
                     } else
                     {
@@ -72,7 +70,7 @@ namespace www
 
         protected void btnRegistro_Click(object sender, EventArgs e)
         {
-            Server.Transfer("registro"); // TODO la página de registro
+            Server.Transfer("Registro.aspx");
         }
 
         protected void iniciarSesion()
@@ -81,7 +79,7 @@ namespace www
             this.lblErrorPassword.Text = "";
             this.lblErrorVentana.Text = "";
             Session["uAutenticado"] = uAutenticado;
-            Server.Transfer("panel.aspx"); // TODO la página de la app
+            Server.Transfer("panel.aspx");
         }
     }
 }
