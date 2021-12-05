@@ -81,7 +81,7 @@ namespace www
             this.lblErrorPassword.Text = "";
             this.lblErrorVentana.Text = "";
             Session["uAutenticado"] = uAutenticado;
-            Server.Transfer("app"); // TODO la página de la app
+            Server.Transfer("panel.aspx"); // TODO la página de la app
         }
     }
 }
