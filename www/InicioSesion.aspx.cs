@@ -17,7 +17,12 @@ namespace www
                 Application["Datos"] = baseDeDatos;
             }
 
-            Session["uAutenticado"] = uAutenticado;
+            if (Session["uAutenticado"] != null)
+            {
+                // Sesión previa iniciada
+                this.iniciarSesion();
+            }
+            
 
             if (!IsPostBack)
             {
@@ -34,16 +39,49 @@ namespace www
             {
                 this.lblErrorEmail.Text = "";
                 uAutenticado = this.baseDeDatos.LeeUsuario(this.tbxEmail.Text);
+                if (uAutenticado != null) {
+                    if (!uAutenticado.ValidaPassword(this.tbxPassword.Text)) {
+                        // this.lblErrorPassword.Text = "Contraseña incorrecta";
+                        this.lblErrorVentana.Text = "Email y/o contraseña incorrecta";
+                    } else
+                    {
+                        // COMRPROBACIONES EXTRA ACTIVO y AUTORIZADO
+                        if (!uAutenticado.Activo)
+                        {
+                            this.lblErrorVentana.Text = "El usuario no está activo, por favor contacta con un administrador.";
+
+                        } else if (uAutenticado.Bloqueado) {
+                            this.lblErrorVentana.Text = "El usuario está bloqueado, por favor contacta con un administrador.";
+                        }
+                        else if (uAutenticado.Autorizado)
+                        {
+                            this.lblErrorVentana.Text = "El usuario no está autorizado, por favor contacta con un administrador.";
+                        }
+                        else
+                        {
+                            // INICIO SESIÓN
+                            this.iniciarSesion();
+                        }
+                    }
+                }
             } else
             {
                 this.lblErrorEmail.Text = "Email no válido";
             }
-           
         }
 
         protected void btnRegistro_Click(object sender, EventArgs e)
         {
+            Server.Transfer("registro"); // TODO la página de registro
+        }
 
+        protected void iniciarSesion()
+        {
+            this.lblErrorEmail.Text = "";
+            this.lblErrorPassword.Text = "";
+            this.lblErrorVentana.Text = "";
+            Session["uAutenticado"] = uAutenticado;
+            Server.Transfer("app"); // TODO la página de la app
         }
     }
 }

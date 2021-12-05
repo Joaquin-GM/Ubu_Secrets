@@ -156,7 +156,7 @@
                 <tr>
                    <td class="padding-col">&nbsp;</td>
                     <td colspan="4">
-                        <asp:TextBox ID="tbxPassword" runat="server" CssClass="auto-style8" Width="100%"></asp:TextBox>
+                        <asp:TextBox ID="tbxPassword" runat="server" CssClass="auto-style8" Width="100%" TextMode="Password"></asp:TextBox>
                     </td>
                     <td class="padding-col">&nbsp;</td>
                 </tr>

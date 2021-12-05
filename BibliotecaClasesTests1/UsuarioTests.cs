@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using BibliotecaClases;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BibliotecaClases.Tests
 {
@@ -91,6 +92,13 @@ namespace BibliotecaClases.Tests
             Assert.AreEqual(u.Password, Encriptador.Encriptar("NuevaPassword"));
             Assert.AreEqual(Encriptador.DesEncriptar(u.Password), "NuevaPassword");
             Assert.IsFalse(u.CambiaPassword("passwordMal", "otraPassword"));
+        }
+
+        [TestMethod()]
+        public void ValidaPasswordTest()
+        {
+            Assert.IsTrue(u.ValidaPassword("Password"));
+            Assert.IsFalse(u.ValidaPassword("passwordMal"));
         }
     }
 }

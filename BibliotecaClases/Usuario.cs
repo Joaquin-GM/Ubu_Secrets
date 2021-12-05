@@ -97,5 +97,15 @@ namespace BibliotecaClases
             }
             return false;
         }
+
+        public bool ValidaPassword(string password)
+        {
+            string passwordEncriptada = Encriptador.Encriptar(password);
+            if (passwordEncriptada == this.Password)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
