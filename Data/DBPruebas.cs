@@ -41,10 +41,7 @@ namespace Data
                 this.tablaSecretos[_secreto.IdSecreto] = _secreto;
                 return true;
             }
-            else
-            {
-                return true;
-            }
+            return false;
         }
 
         public bool ActualizaUsuario(Usuario _usuario)
@@ -83,7 +80,7 @@ namespace Data
             {
                 if (usuario.Email == _email)
                 {
-                    this.tablaUsuarios.Remove(usuario.IdUsuario);
+                    tablaUsuarios.Remove(usuario.IdUsuario);
                     return true;
                 }
             }
@@ -94,7 +91,7 @@ namespace Data
         {
             if (tablaUsuarios.ContainsKey(_idUsuario))
             {
-                tablaSecretos.Remove(_idUsuario);
+                tablaUsuarios.Remove(_idUsuario);
                 return true;
             }
             return false;
